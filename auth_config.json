@@ -1,0 +1,6 @@
+{
+    "domain": "dev-2rwayylz.us.auth0.com",
+    "clientId": "Xj9b1sqz5GtlL9D9cVse26wSpoiC86Ml",
+    "audience": "https://saveo/api",
+    "serverUrl": "http://localhost:8000"
+  }

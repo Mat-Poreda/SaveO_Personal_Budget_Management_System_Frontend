@@ -1,0 +1,144 @@
+p {
+    font-family: 'Roboto';
+    color: #354855;
+  }
+  
+.bio{
+  background-color: transparent;
+  border: none;
+}
+  
+  img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+  }
+  
+  .select-profile-picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  
+  }
+  
+  .message {
+    font-family: 'Roboto';
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    transition: all 1s;
+    opacity: 0;
+    background: rgba(229, 229, 229, 0.83);
+  }
+  
+  .image-container:hover .message {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    background: rgba(229, 229, 229, 0.83);
+  }
+
+  .container{
+    background:rgba(229, 229, 229, 0.83);
+    padding: 20px;
+    max-width: 1140px;
+    min-height: 650px;
+   
+}
+
+
+.footer {
+  position: sticky;
+  position: -webkit-sticky;
+  left: 0;
+  bottom: 0;
+}
+
+.fb-profile{
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+
+.fb-profile-text{
+  float: right;
+  margin-left: 20px;
+}
+
+.image-container {
+  position: relative;
+  text-align: center;
+  float: left;
+  margin-right: 20px;
+  margin-left: auto;
+}
+
+h1{
+  font-family: Righteous;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 32px;
+  color: #553542;
+  margin-bottom: 40px;
+}
+
+.row{
+  display: flex;
+  max-width: 1140px;
+  justify-content: space-between;
+}
+
+.col-md-6 {
+  float: right;
+  width: max-content;
+  margin-right: 20px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-list {
+  float: right;
+  margin-right: 20px;
+}
+
+.counter{
+  min-width: max-content;
+  font-family: 'Roboto';
+  color: #354855;
+  margin-top: 30px;
+}
+
+.stats {
+  min-width: 310px;
+  justify-content: space-evenly;
+  margin-right: 20px;
+}
+
+.bio {
+  box-sizing: border-box;
+  width: 100%;
+  border: solid #9eb2be 0.5px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.button-primary{
+  background-color: #354855;
+  color: aliceblue;
+  border-style: none;
+  font-family: 'Roboto';
+  margin-top: 10px;
+  margin-left: 25px;
+}
