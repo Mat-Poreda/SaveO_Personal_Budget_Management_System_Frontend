@@ -33,6 +33,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 
 
 @NgModule({
@@ -53,7 +57,9 @@ import { MatDividerModule } from '@angular/material/divider';
     HeaderComponent,
     TransactionPageComponent,
     BudgetPageComponent,
-    CategoryPageComponent
+    CategoryPageComponent,
+    SideBarComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +80,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
+    NgxChartsModule,
+
   ],
   providers: [
     {
@@ -83,7 +91,8 @@ import { MatDividerModule } from '@angular/material/divider';
     },
     HttpClientModule
 
+
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, BudgetPageComponent]
 })
 export class AppModule { }

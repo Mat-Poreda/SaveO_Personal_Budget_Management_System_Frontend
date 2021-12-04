@@ -1,0 +1,117 @@
+@import '~mdb-ui-kit/css/mdb.min.css';
+
+
+@import '~bootstrap/dist/css/bootstrap.min.css'; 
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+mat-toolbar {
+    background: gray;
+    color: white;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+mat-sidenav {
+    margin: 16px;
+    width: 200px;
+    border-right: none;
+    background: goldenrod;
+    color: white;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+
+}
+
+.content {
+    height: calc(100vh - 98px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+    color: lightgray;
+}
+
+mat-sidenav-container {
+    height: calc(100vh - 65px);
+    opacity: 0.80;
+}
+
+.menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+    mat-icon {
+        margin-right: 8px;
+    }
+
+}
+
+
+.avatar {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.name {
+    margin-top: 8px;
+    font-weight: normal;
+}
+
+.designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    color: lightgrey;
+}
+
+mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+
+  .select-profile-picture {
+
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    width: 50%;
+    height: 50%;
+    cursor: pointer;
+  
+  }
+
+  .message {
+    font-family: 'Roboto';
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    transition: all 1s;
+    opacity: 0;
+    background: rgba(229, 229, 229, 0.83);
+  }
+  
+  .image-container:hover .message {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    background: rgba(229, 229, 229, 0.83);
+  }

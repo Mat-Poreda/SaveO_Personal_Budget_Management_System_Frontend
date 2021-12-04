@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { BudgetPageComponent } from './pages/budget-page/budget-page.component';
 import { CategoryPageComponent } from './pages/category-page/category-page.component';
 import { TransactionPageComponent } from './pages/transaction-page/transaction-page.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,11 @@ const routes: Routes = [
   {
     path: 'transaction',
     component: TransactionPageComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'main',
+    component: MainPageComponent,
     canActivate: [AuthGuard],
   },
   {

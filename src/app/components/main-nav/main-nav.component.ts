@@ -16,8 +16,7 @@ export class MainNavComponent implements OnInit {
   sticky: boolean = false;
   elementPosition: any;
 
-  @ViewChild(MatSidenav)
-  sidenav!: MatSidenav;
+
 
   constructor() {}
 
@@ -26,6 +25,7 @@ export class MainNavComponent implements OnInit {
   ngAfterViewInit(){
     this.elementPosition = this.menuElement.nativeElement.offsetTop;
   }
+  
 
   @HostListener('window:scroll', ['$event'])
   handleScroll(){

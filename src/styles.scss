@@ -8,10 +8,11 @@
 body
 {
     font-family: 'Open Sans', sans-serif;
-
     background-size: cover;
+    background-color: transparent;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    padding-top: 20px
 }
 
 .fb-profile img.fb-image-lg{
@@ -135,5 +136,15 @@ Licensed under MIT
     z-index: 9;
     width: 20%; 
 }
+}
+
+.mat-drawer-container {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  display: block;
+  overflow: hidden;
+  background-color: transparent;
 }
 
