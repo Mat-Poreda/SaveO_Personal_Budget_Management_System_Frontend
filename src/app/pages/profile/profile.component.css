@@ -1,6 +1,6 @@
 p {
     font-family: 'Roboto';
-    color: #354855;
+    color: whitesmoke;
   }
   
 .bio{
@@ -45,7 +45,7 @@ p {
   }
 
   .container{
-    background:rgba(229, 229, 229, 0.83);
+    background:rgba(49, 46, 46, 0.83);
     padding: 20px;
     max-width: 1140px;
     min-height: 650px;
@@ -80,7 +80,7 @@ p {
 }
 
 h1{
-  font-family: Righteous;
+  font-family: Rob;
   font-style: normal;
   font-weight: normal;
   font-size: 26px;
@@ -129,7 +129,7 @@ h1{
 .bio {
   box-sizing: border-box;
   width: 100%;
-  border: solid #9eb2be 0.5px;
+  border: solid goldenrod 0.5px;
   padding: 5px;
   border-radius: 5px;
 }

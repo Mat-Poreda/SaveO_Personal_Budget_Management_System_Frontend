@@ -1,4 +1,8 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { MatSidenav } from '@angular/material/sidenav';
+import { delay } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-main-nav',
@@ -11,6 +15,9 @@ export class MainNavComponent implements OnInit {
   menuElement!: ElementRef;
   sticky: boolean = false;
   elementPosition: any;
+
+  @ViewChild(MatSidenav)
+  sidenav!: MatSidenav;
 
   constructor() {}
 

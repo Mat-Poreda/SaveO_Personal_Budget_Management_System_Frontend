@@ -24,7 +24,7 @@ export class HomeComponent implements AfterViewInit {
   }
     ngAfterViewInit() {
         this.elementRef.nativeElement.ownerDocument
-            .body.style.backgroundImage = 'url("assets/img/screen_wide.png")';
+            .body.style.backgroundImage = 'url("assets/img/black_bck.jpg")';
     }
 
   ngOnInit(): void {

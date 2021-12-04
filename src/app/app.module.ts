@@ -24,6 +24,11 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { TransactionPageComponent } from './pages/transaction-page/transaction-page.component';
+import { CategoryPageComponent } from './pages/category-page/category-page.component';
+import { BudgetPageComponent } from './pages/budget-page/budget-page.component';
+
 
 
 @NgModule({
@@ -41,7 +46,10 @@ import { HeaderComponent } from './components/header/header.component';
     HomeComponent,
     PageNotFoundComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    TransactionPageComponent,
+    BudgetPageComponent,
+    CategoryPageComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +64,12 @@ import { HeaderComponent } from './components/header/header.component';
       },
     }),
     NgbModule,
+    MDBBootstrapModule.forRoot(),
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
   ],
   providers: [
     {
