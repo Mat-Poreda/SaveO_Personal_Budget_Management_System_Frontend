@@ -15,8 +15,14 @@
         <mat-divider></mat-divider>
 
         <button mat-button class="menu-button">
-            <i class="bi bi-person-fill"></i>
+            <a
+            routerLink="/profile"
+            class="nav-link"
+            routerLinkActive="router-link-exact-active"
+          >
+            <i class="bi bi-person-fill" ></i>
             <span>Profile</span>
+        </a>
         </button>
         <button mat-button class="menu-button">
             <i class="bi bi-piggy-bank-fill"></i>
@@ -36,9 +42,10 @@
     </mat-sidenav>
     <mat-sidenav-content style="margin-left: 15%; margin-right: 5%;">
         <div class="content mat-elevation-z8" style="width:90%;">
-            <div >
-            <app-budget-page ></app-budget-page>
-        </div>
+
+            <!-- <app-budget-page ></app-budget-page> -->
+            <app-category-page></app-category-page>
+
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>

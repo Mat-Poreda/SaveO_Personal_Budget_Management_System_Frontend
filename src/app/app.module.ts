@@ -36,6 +36,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { CategoryComponentComponent } from './components/category-component/category-component.component';
+import { TransactionComponentComponent } from './components/transaction-component/transaction-component.component';
 
 
 
@@ -59,7 +61,9 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     BudgetPageComponent,
     CategoryPageComponent,
     SideBarComponent,
-    MainPageComponent
+    MainPageComponent,
+    CategoryComponentComponent,
+    TransactionComponentComponent
   ],
   imports: [
     BrowserModule,
