@@ -10,6 +10,7 @@ import { UserServiceService } from 'src/app/service/user-service/user-service.se
 import { ImageService } from 'src/app/service/image-service/image-service.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DataStorageService } from 'src/app/service/data-storage/data-storage.service';
 class ImageSnippet {
   constructor(public src: string, public file: File) {}
 }
@@ -60,7 +61,7 @@ export class MainPageComponent implements OnInit {
   isImageLoading: boolean = false;
   userStats: UserStats;
 
-  constructor(private observer: BreakpointObserver, public auth: AuthService, private userService: UserServiceService, private httpClient: HttpClient, 
+  constructor(private observer: BreakpointObserver, public auth: AuthService, private userService: UserServiceService, private dataStorageService: DataStorageService,  private httpClient: HttpClient, 
     private elementRef: ElementRef, private imageService: ImageService, private router: Router) {
       this.userDetails= localStorage.UserDetails;
       this.bio=this.userDetails.bio;
@@ -95,6 +96,14 @@ export class MainPageComponent implements OnInit {
                              this.userDetails=tempDetails.nickname;
                             }
                   localStorage.setItem('UserDetails', JSON.stringify(this.userDetails));
+                  
+                  this.dataStorageService.postUserDetails(this.userDetails).subscribe(
+                    (data) => {
+                      console.log("Id from data storage: "+data.id);
+                    }
+                  )
+                  
+                  ;
                 },
             );
           }
