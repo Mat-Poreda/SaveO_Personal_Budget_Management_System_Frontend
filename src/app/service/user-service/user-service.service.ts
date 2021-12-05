@@ -19,18 +19,18 @@ export class UserServiceService {
     };
 
     getUserDetails(email:string) : Observable<any> {
-      return this.http.get<any>(this.baseURL + '/users/'+email);
+      return this.http.get<any>(this.baseURL + '/user_details/'+email);
     }
 
     getUserStats(email:string) : Observable<any> {
-      return this.http.get<any>(this.baseURL + '/users/'+email+'/stats');
+      return this.http.get<any>(this.baseURL + '/user_details/'+email+'/stats');
     }
     postUserDetails(userDetails: UserDetails) : Observable<any> {
 
-      return this.http.post<any>(this.baseURL + '/users', userDetails);
+      return this.http.post<any>(this.baseURL + '/user_details', userDetails);
     }
     updateUserDetails(email: string, userDetails: UserDetails) : Observable<any> {
-      return this.http.put<any>(this.baseURL + '/users/' + email, userDetails);
+      return this.http.put<any>(this.baseURL + '/user_details/' + email, userDetails);
     }
 }
 

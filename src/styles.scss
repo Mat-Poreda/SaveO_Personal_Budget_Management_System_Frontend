@@ -1,5 +1,5 @@
 @import '~mdb-ui-kit/css/mdb.min.css';
-@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
 
 @import '~bootstrap/dist/css/bootstrap.min.css'; 
 @import '~bootstrap-icons/font/bootstrap-icons.css';
@@ -8,10 +8,11 @@
 body
 {
     font-family: 'Open Sans', sans-serif;
-    background-image: url("src/assets/img/black_bck.jpg");
     background-size: cover;
+    background-color: transparent;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    padding-top: 20px
 }
 
 .fb-profile img.fb-image-lg{
@@ -135,5 +136,15 @@ Licensed under MIT
     z-index: 9;
     width: 20%; 
 }
+}
+
+.mat-drawer-container {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  display: block;
+  overflow: hidden;
+  background-color: transparent;
 }
 

@@ -219,7 +219,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument
-        .body.style.backgroundImage = 'url("assets/img/screen_wide.png")';
+        .body.style.backgroundImage = 'url("assets/img/black_bck.jpg")';
 }
 
 employeeDetails(id: number){

@@ -24,6 +24,19 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { TransactionPageComponent } from './pages/transaction-page/transaction-page.component';
+import { CategoryPageComponent } from './pages/category-page/category-page.component';
+import { BudgetPageComponent } from './pages/budget-page/budget-page.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 
 
 @NgModule({
@@ -41,7 +54,12 @@ import { HeaderComponent } from './components/header/header.component';
     HomeComponent,
     PageNotFoundComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    TransactionPageComponent,
+    BudgetPageComponent,
+    CategoryPageComponent,
+    SideBarComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +74,14 @@ import { HeaderComponent } from './components/header/header.component';
       },
     }),
     NgbModule,
+    MDBBootstrapModule.forRoot(),
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
+    NgxChartsModule,
+
   ],
   providers: [
     {
@@ -65,7 +91,8 @@ import { HeaderComponent } from './components/header/header.component';
     },
     HttpClientModule
 
+
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, BudgetPageComponent]
 })
 export class AppModule { }

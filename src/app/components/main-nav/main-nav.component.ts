@@ -1,4 +1,8 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { MatSidenav } from '@angular/material/sidenav';
+import { delay } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-main-nav',
@@ -12,6 +16,8 @@ export class MainNavComponent implements OnInit {
   sticky: boolean = false;
   elementPosition: any;
 
+
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -19,6 +25,7 @@ export class MainNavComponent implements OnInit {
   ngAfterViewInit(){
     this.elementPosition = this.menuElement.nativeElement.offsetTop;
   }
+  
 
   @HostListener('window:scroll', ['$event'])
   handleScroll(){

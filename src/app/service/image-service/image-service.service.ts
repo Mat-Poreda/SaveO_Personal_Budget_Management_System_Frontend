@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class ImageService{
 
   constructor(private http: HttpClient) {}
-  readonly baseURL:string = "http://localhost:8000/api/users/"; 
+  readonly baseURL:string = "http://localhost:8000/api/user_details/"; 
 
   public uploadImage(image: File, email: string): Observable<any> {
     const multipartImage = new FormData();  
