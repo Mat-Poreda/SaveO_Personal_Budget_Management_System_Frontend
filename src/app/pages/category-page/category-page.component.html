@@ -1,4 +1,5 @@
-<div class="wrapper">
-<app-category-component *ngFor="let category of categories; let i = index" [category]="category"  style="display: grid;"></app-category-component>
+<div class="wrapper" fxLayout="row wrap" fxLayoutGap="30px">
+<app-category-component *ngFor="let category of categories; let i = index" [category]="category" ></app-category-component>
 </div>
+<!-- <app-modify-category></app-modify-category> -->
 

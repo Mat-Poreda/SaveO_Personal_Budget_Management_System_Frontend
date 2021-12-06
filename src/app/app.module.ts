@@ -38,8 +38,14 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { CategoryComponentComponent } from './components/category-component/category-component.component';
 import { TransactionComponentComponent } from './components/transaction-component/transaction-component.component';
-
-
+import { ModifyCategoryComponent } from './components/modals/modify-category/modify-category.component';
+import { ModifyTransactionComponent } from './components/modals/modify-transaction/modify-transaction.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { DialogModifyCategory } from './components/modals/dialog-modify-category/dialog-modify-category.component';
+import { MatDialogClose, MatDialogModule } from '@angular/material/dialog';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -63,7 +69,12 @@ import { TransactionComponentComponent } from './components/transaction-componen
     SideBarComponent,
     MainPageComponent,
     CategoryComponentComponent,
-    TransactionComponentComponent
+    TransactionComponentComponent,
+    ModifyCategoryComponent,
+    ModifyTransactionComponent,
+    DialogModifyCategory,
+  
+    
   ],
   imports: [
     BrowserModule,
@@ -85,6 +96,16 @@ import { TransactionComponentComponent } from './components/transaction-componen
     MatIconModule,
     MatDividerModule,
     NgxChartsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDialogModule,
+    FlexLayoutModule
+
+  ],
+  exports: [
+    MatFormFieldModule,
+    MatInputModule,
 
   ],
   providers: [

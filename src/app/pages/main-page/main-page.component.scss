@@ -16,8 +16,8 @@ mat-toolbar {
 mat-sidenav {
     margin: 16px;
     width: 200px;
-    // border-right: none;
-    background: transparent;
+    background-color: #18191f;
+    opacity: 0.9;
     background-blend-mode: color;
     color: goldenrod;
     border-radius: 10px;
@@ -35,7 +35,7 @@ mat-sidenav {
     margin-left: 32px;
 
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 
     font-size: 2rem;
@@ -44,7 +44,9 @@ mat-sidenav {
 
 mat-sidenav-container {
     height: calc(100vh - 65px);
-    opacity: 0.80;
+    margin-left: 5%;
+
+    // opacity: 0.80;
 }
 
 .menu-button {
@@ -174,4 +176,6 @@ mat-divider {
       filter: hue-rotate(360deg);
     }
   }
-  
+  .routerLinkActive{
+    color: goldenrod
+  }

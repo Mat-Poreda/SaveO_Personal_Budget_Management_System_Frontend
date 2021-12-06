@@ -14,19 +14,23 @@
 
         <mat-divider></mat-divider>
 
-        <button mat-button class="menu-button">
-            <a
-            routerLink="/profile"
-            class="nav-link"
-            routerLinkActive="router-link-exact-active"
-          >
-            <i class="bi bi-person-fill" ></i>
-            <span>Profile</span>
-        </a>
+        <button mat-button class="menu-button" style="color: goldenrod" (click)="changePageComponent('EXPENSE')">
+            <i class="bi bi-tags-fill"  style="color: goldenrod"></i>
+            <span style="color: goldenrod"> Expenses</span>
         </button>
-        <button mat-button class="menu-button">
+
+        <button mat-button class="menu-button" style="color: goldenrod" (click)="changePageComponent('DEPOSIT')">
+            <i class="bi bi-piggy-bank-fill"  style="color: goldenrod"></i>
+            <span style="color: goldenrod"> Deposits</span>
+        </button>
+
+        <button mat-button class="menu-button" style="color: goldenrod" (click)="changePageComponent('INCOME')">
+            <i class="bi bi-tags-fill"  style="color: goldenrod"></i>
+            <span style="color: goldenrod"> Incomes</span>
+        </button>
+        <button mat-button class="menu-button" (click)="changePageComponent('budget')" >
             <i class="bi bi-piggy-bank-fill"></i>
-            <span>Balance</span>
+            <span> Balance</span>
         </button>
         <button mat-button class="menu-button">
             <mat-icon>info</mat-icon>
@@ -40,11 +44,11 @@
 
 
     </mat-sidenav>
-    <mat-sidenav-content style="margin-left: 15%; margin-right: 5%;">
+    <mat-sidenav-content style="margin-left: 15%; margin-right: 5%; ">
         <div class="content mat-elevation-z8" style="width:90%;">
 
-            <!-- <app-budget-page ></app-budget-page> -->
-            <app-category-page></app-category-page>
+            <app-budget-page *ngIf="showBudget"></app-budget-page>
+            <app-category-page *ngIf="showCategories" [type]="categoryType" ></app-category-page>
 
         </div>
     </mat-sidenav-content>
