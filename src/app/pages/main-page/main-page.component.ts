@@ -61,6 +61,11 @@ export class MainPageComponent implements OnInit {
   isImageLoading: boolean = false;
   userStats: UserStats;
 
+  showCategories: boolean = false;
+  categoryType: string = "EXPENSE";
+  showBudget: boolean = true;
+  
+
   constructor(private observer: BreakpointObserver, public auth: AuthService, private userService: UserServiceService, private dataStorageService: DataStorageService,  private httpClient: HttpClient, 
     private elementRef: ElementRef, private imageService: ImageService, private router: Router) {
       this.userDetails= localStorage.UserDetails;
@@ -262,6 +267,19 @@ this.router.navigate(['playlist', id]);
 }
 logout(): void {
   this.auth.logout({ returnTo: "/home" });
+}
+
+changePageComponent(type: any){
+  this.ngOnInit();
+  if(type=="budget"){
+    this.showCategories=false;
+    this.showBudget=true;
+  }else{
+    this.categoryType=type;
+    this.showCategories=true;
+    this.showBudget=false;
+  }
+
 }
 
 }

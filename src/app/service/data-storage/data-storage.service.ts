@@ -35,7 +35,7 @@ export class DataStorageService {
       return this.http.put<any>(this.baseURL + '/user_details/' + email, userDetails);
     }
 
-    getCategories(userDetails: UserDetails) : Observable<any> {
-      return this.http.get<any>(this.baseURL + '/data_storage/category/'+1+'/categories');
+    getCategories(userDetails: UserDetails, type: string) : Observable<any> {
+      return this.http.get<any>(this.baseURL + '/data_storage/category/'+1+'/'+type);
     }
 }
