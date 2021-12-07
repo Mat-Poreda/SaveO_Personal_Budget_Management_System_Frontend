@@ -1,0 +1,52 @@
+.summaryContainer{
+
+    margin: auto !important;
+    width: 50% !important;
+    /* vertical-align:top; 
+    display: table-cell; */
+}
+.dateButton { 
+    *display:inline-block;
+    vertical-align: middle;
+    // background-color: #18191f;
+    opacity: 0.9;
+    color: goldenrod;
+    font-weight: bold;
+    vertical-align:top;
+    float:left;
+
+   }
+
+.dateButtonSelected { 
+      *display:inline-block;
+      vertical-align: middle;
+      background-color: goldenrod;
+      opacity: 0.9;
+      color: #18191f;
+      font-weight: bold;
+      vertical-align:top;
+      float:left; 
+    }
+
+
+
+    .glowing-gold {
+
+      border-radius: 200px;
+      -webkit-animation: gold-glow 5s ease-in-out infinite alternate;
+      -moz-animation: gold-glow 5s ease-in-out infinite alternate;
+      animation: gold-glow 5s ease-in-out infinite alternate;
+      color: goldenrod;
+      font-weight: bold;
+    }
+    
+    @keyframes gold-glow {
+      from {
+        box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 7px #fff, 0 0 10px #ffdd1b,
+          0 0 17px #ffdd1b, 0 0 20px #ffdd1b, 0 0 25px #ffdd1b, 0 0 37px #ffdd1b;
+      }
+      to {
+        box-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 5px #ffdd1b,
+          0 0 7px #ffdd1b, 0 0 10px #ffdd1b, 0 0 13px #ffdd1b, 0 0 17px #ffdd1b;
+      }
+    }

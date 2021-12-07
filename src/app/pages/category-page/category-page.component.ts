@@ -8,14 +8,16 @@ import { local } from 'd3-selection';
 @Component({
   selector: 'app-category-page',
   templateUrl: './category-page.component.html',
-  styleUrls: ['./category-page.component.css']
+  styleUrls: ['./category-page.component.scss']
 })
 export class CategoryPageComponent implements OnInit {
   @Input() type: string = "";
+  @Input() category!: Category;
   userDetails: UserDetails;
   categories: Array<Category>;
   
   constructor(private dataStorageService: DataStorageService) {  
+    this.category = new Category(0, 0, "", "", "");
     this.type = "";
     this.categories=[];
     this.userDetails= localStorage.UserDetails;
@@ -24,12 +26,14 @@ export class CategoryPageComponent implements OnInit {
 
     console.log(localStorage.UserDetails.id);
     this.dataStorageService.getCategories(localStorage.UserDetails, this.type).subscribe(
-      (categories) => {
+      async (categories) => {
         console.log("this details id"+this.userDetails.id)
         console.log("this ls id"+localStorage.UserDetails.id)
         this.categories = categories;
+        
       }
-    );
+
+      );
 
   }
 

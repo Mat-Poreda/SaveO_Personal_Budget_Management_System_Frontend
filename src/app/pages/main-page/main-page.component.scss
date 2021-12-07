@@ -14,7 +14,7 @@ mat-toolbar {
 }
 
 mat-sidenav {
-    margin: 16px;
+    margin: 3%px;
     width: 200px;
     background-color: #18191f;
     opacity: 0.9;
@@ -23,8 +23,9 @@ mat-sidenav {
     border-radius: 10px;
     border-color: goldenrod;
     border: 2px;
-    padding: 16px;
+
     text-align: center;
+    overflow: hidden;
 
 }
 
@@ -36,15 +37,17 @@ mat-sidenav {
 
     display: flex;
     justify-content: start;
-    align-items: center;
+  
 
     font-size: 2rem;
     color: lightgray;
+
+    
 }
 
 mat-sidenav-container {
     height: calc(100vh - 65px);
-    margin-left: 5%;
+    margin-left: 1%;
 
     // opacity: 0.80;
 }
@@ -92,7 +95,7 @@ mat-divider {
   }
 
   .select-profile-picture {
-
+    margin: 1%;
     top: 0;
     left: 0;
     z-index: 1;

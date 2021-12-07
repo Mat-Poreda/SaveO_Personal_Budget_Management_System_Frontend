@@ -46,6 +46,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { DialogModifyCategory } from './components/modals/dialog-modify-category/dialog-modify-category.component';
 import { MatDialogClose, MatDialogModule } from '@angular/material/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SummaryModuleComponent } from './components/summary-module/summary-module.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ModifyCategoryComponent,
     ModifyTransactionComponent,
     DialogModifyCategory,
+    SummaryModuleComponent,
+    
   
     
   ],
@@ -100,7 +103,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatInputModule,
     MatSelectModule,
     MatDialogModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+
 
   ],
   exports: [
