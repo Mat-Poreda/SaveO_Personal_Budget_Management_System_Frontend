@@ -3,6 +3,12 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA,} from '@angular/material/dialog';
 import { DialogModifyCategory } from '../dialog-modify-category/dialog-modify-category.component';
 export interface DialogData {
+  userId: number;
+  image: any;
+  description: string;
+  price: number;
+  date: Date;
+  categoryId: number;
   animal: string;
   name: string;
 }

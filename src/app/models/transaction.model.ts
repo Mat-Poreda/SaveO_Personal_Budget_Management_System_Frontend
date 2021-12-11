@@ -1,27 +1,9 @@
 export default class TransactionModel {
-    public get categoryId(): number {
-        return this._categoryId;
+    public get id(): number {
+        return this._id;
     }
-    public set categoryId(value: number) {
-        this._categoryId = value;
-    }
-    public get imageDTO(): Object {
-        return this._imageDTO;
-    }
-    public set imageDTO(value: Object) {
-        this._imageDTO = value;
-    }
-    public get date(): Date {
-        return this._date;
-    }
-    public set date(value: Date) {
-        this._date = value;
-    }
-    public get price(): number {
-        return this._price;
-    }
-    public set price(value: number) {
-        this._price = value;
+    public set id(value: number) {
+        this._id = value;
     }
     public get description(): string {
         return this._description;
@@ -29,12 +11,40 @@ export default class TransactionModel {
     public set description(value: string) {
         this._description = value;
     }
-    public get id(): number {
-        return this._id;
+    public get price(): number {
+        return this._price;
     }
-    public set id(value: number) {
-        this._id = value;
+    public set price(value: number) {
+        this._price = value;
+    }
+    public get date_1(): Date {
+        return this._date;
+    }
+    public set date_1(value: Date) {
+        this._date = value;
+    }
+    public get date(): Date {
+        return this._date;
+    }
+    public set date(value: Date) {
+        this._date = value;
+    }
+    public get imageDTO(): String {
+        return this._imageDTO;
+    }
+    public set imageDTO(value: String) {
+        this._imageDTO = value;
+    }
+    public get categoryId(): number {
+        return this._categoryId;
+    }
+    public set categoryId(value: number) {
+        this._categoryId = value;
     }
 
-    constructor(private _id: number, private _description: string, private _price: number, private _date: Date, private _imageDTO: Object, private _categoryId: number) {}
+
+    constructor(private _categoryId: number, private _imageDTO: String, private _date: Date, private _price: number, private _description: string, private _id: number) {
+
+    }
+
 }

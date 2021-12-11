@@ -2,6 +2,7 @@ import UserDetails  from 'src/app/models/user-details.model';
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Observable, of } from 'rxjs';
+import TransactionModel from 'src/app/models/transaction.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ export class DataStorageService {
 
 
   readonly baseURL:string = "http://localhost:8000/api";  
+  readonly transactionURL:string = "http://localhost:8000/api/data_storage/transactions/";  
 
   constructor(
     private http: HttpClient
@@ -35,7 +37,18 @@ export class DataStorageService {
       return this.http.put<any>(this.baseURL + '/user_details/' + email, userDetails);
     }
 
-    getCategories(userDetails: UserDetails, type: string) : Observable<any> {
-      return this.http.get<any>(this.baseURL + '/data_storage/category/'+1+'/'+type);
+    getCategories(userDetails: UserDetails, type: string, startDate: string, endDate: string) : Observable<any> {
+      let params = {startDate: startDate, endDate: endDate, type: type};
+      return this.http.get<any>(this.baseURL + '/data_storage/category/'+1+'/'+type, {params: params});
+    }
+
+    getCategoryStats(categoryId: number, startDate: string, endDate: string) : Observable<any> {
+      let params = {startDate: startDate, endDate: endDate};
+      return this.http.get<any>(this.baseURL + '/data_storage/category/'+categoryId+'/stats', {params: params});
+    }
+
+
+    postTransaction(userId: number, transactionDTO: TransactionModel) : Observable<any> {
+      return this.http.post<any>(this.transactionURL + userId, transactionDTO);
     }
 }

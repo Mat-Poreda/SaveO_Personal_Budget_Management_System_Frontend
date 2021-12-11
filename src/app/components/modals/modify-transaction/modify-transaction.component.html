@@ -1,1 +1,23 @@
-<p>modify-transaction works!</p>
+<h1 mat-dialog-title>Add Transaction</h1>
+<div mat-dialog-content>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <input type="text" matInput [(ngModel)]="description">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Price</mat-label>
+    <input type="number" matInput [(ngModel)]="price">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Date</mat-label>
+    <input type="date" matInput [(ngModel)]="date">
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="addTransaction()"  cdkFocusInitial>Ok</button>
+</div>

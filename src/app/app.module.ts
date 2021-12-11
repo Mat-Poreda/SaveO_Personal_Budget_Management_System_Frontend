@@ -47,7 +47,7 @@ import { DialogModifyCategory } from './components/modals/dialog-modify-category
 import { MatDialogClose, MatDialogModule } from '@angular/material/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SummaryModuleComponent } from './components/summary-module/summary-module.component';
-
+// import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 @NgModule({
   declarations: [
     AppComponent,
@@ -104,12 +104,16 @@ import { SummaryModuleComponent } from './components/summary-module/summary-modu
     MatSelectModule,
     MatDialogModule,
     FlexLayoutModule,
+    // MdbModalService,
+    // MdbModalRef,
 
-
+    
   ],
   exports: [
     MatFormFieldModule,
     MatInputModule,
+    // MdbModalService,
+    // MdbModalRef,
 
   ],
   providers: [

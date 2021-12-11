@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { NotifierService } from './../../service/notifier.service';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { addDays, endOfISOWeek, endOfMonth, startOfISOWeek, startOfMonth } from 'date-fns';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-summary-module',
@@ -11,6 +13,7 @@ export class SummaryModuleComponent implements OnInit {
   startDate: string;
   endDate: string;
 
+  subjectNotifier: Subject<null> = new Subject<null>();
   saleData = [
     { name: "Mobiles", value: 105000 },
     { name: "Laptop", value: 55000 },
@@ -19,13 +22,23 @@ export class SummaryModuleComponent implements OnInit {
     { name: "Fridge", value: 20000 }
   ];
 
-  constructor() {
+  constructor(private notifierService: NotifierService) { 
     this.selectedDates='today';
     this.startDate = new Date().toISOString().slice(0, 10);
     this.endDate = new Date().toISOString().slice(0, 10);
+    localStorage.setItem('startDate', this.startDate);
+    localStorage.setItem('endDate', this.endDate);
    }
 
   ngOnInit(): void {
+    this.notifyForChange();
+  }
+  ngOnChanges() {
+    this.notifyForChange();
+  };
+
+  notifyForChange() {
+    this.notifierService.notifyAboutChange();
   }
 
   changeDate(range: string) {
@@ -62,5 +75,12 @@ export class SummaryModuleComponent implements OnInit {
         break;
       }
     }
+    localStorage.setItem('startDate', this.startDate);
+    localStorage.setItem('endDate', this.endDate);
+    this.notifyForChange();
+  }
+
+  notifyAboutChange() {
+    this.subjectNotifier.next();
   }
 }
