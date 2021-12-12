@@ -1,0 +1,22 @@
+<div style="margin: 0;">
+    <table class="container" style="width: 100%;">
+        <thead>
+            <tr>
+                <th><h1><span style="white-space: nowrap; margin-left: 5px;">Date</span></h1></th>
+                <th><h1><span style="white-space: nowrap; margin-left: 5px;">Description</span></h1></th>
+                <th><h1><span style="white-space: nowrap; margin-left: 5px;">Price</span></h1></th>
+                <th><h1><span style="white-space: nowrap; margin-left: 5px;">Remove</span></h1></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let transaction of transactions; let i = index">
+                <td><span style="white-space: nowrap; margin-left: 5px;">{{transaction.date}}</span></td>
+                <td><span style="white-space: nowrap; margin-left: 5px;">{{transaction.description}}</span></td>
+                <td><span style="white-space: nowrap; margin-left: 5px;">{{transaction.price}}</span></td>
+                <td><button (click)="delete(transaction)"><i class="bi bi-dash-circle"></i> Remove</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>

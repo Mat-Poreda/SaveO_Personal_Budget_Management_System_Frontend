@@ -3,6 +3,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA,} from '@angular/material/dialog';
 import { DialogModifyCategory } from '../dialog-modify-category/dialog-modify-category.component';
 export interface DialogData {
+  transactions: import("c:/Users/matpo/Desktop/Ironhack/angular/2. Ironhack - Personal Final Project Frontend/SaveO_Personal_Budget_Management_System_Frontend/src/app/models/transaction.model").default[];
   userId: number;
   image: any;
   description: string;

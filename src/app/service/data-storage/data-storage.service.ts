@@ -10,6 +10,7 @@ import TransactionModel from 'src/app/models/transaction.model';
 export class DataStorageService {
 
 
+
   readonly baseURL:string = "http://localhost:8000/api";  
   readonly transactionURL:string = "http://localhost:8000/api/data_storage/transactions/";  
 
@@ -37,9 +38,9 @@ export class DataStorageService {
       return this.http.put<any>(this.baseURL + '/user_details/' + email, userDetails);
     }
 
-    getCategories(userDetails: UserDetails, type: string, startDate: string, endDate: string) : Observable<any> {
+    getCategories(userId: number, type: string, startDate: string, endDate: string) : Observable<any> {
       let params = {startDate: startDate, endDate: endDate, type: type};
-      return this.http.get<any>(this.baseURL + '/data_storage/category/'+1+'/'+type, {params: params});
+      return this.http.get<any>(this.baseURL + '/data_storage/category/'+userId+'/'+type, {params: params});
     }
 
     getCategoryStats(categoryId: number, startDate: string, endDate: string) : Observable<any> {
@@ -50,5 +51,8 @@ export class DataStorageService {
 
     postTransaction(userId: number, transactionDTO: TransactionModel) : Observable<any> {
       return this.http.post<any>(this.transactionURL + userId, transactionDTO);
+    }
+    deleteTransaction(transactionDTO: TransactionModel) {
+      return this.http.delete<any>(this.transactionURL + transactionDTO.id);
     }
 }

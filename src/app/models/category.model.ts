@@ -1,4 +1,5 @@
 export default class Category {
+    [x: string]: any;
     public get count(): number {
         return this._count;
     }

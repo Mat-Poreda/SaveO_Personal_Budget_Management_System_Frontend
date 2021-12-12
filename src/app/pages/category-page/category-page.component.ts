@@ -8,6 +8,7 @@ import { MatDialog } from "@angular/material/dialog";
 import TransactionModel from "src/app/models/transaction.model";
 import { Subscription } from "rxjs";
 import { NotifierService } from "src/app/service/notifier.service";
+import { TransactionsListComponent } from "src/app/components/modals/transactions-list/transactions-list.component";
 
 
 
@@ -20,30 +21,28 @@ export class CategoryPageComponent implements OnInit, OnDestroy, OnChanges {
   @Input() type: string = "";
   @Input() category!: Category;
 
-  userDetails: UserDetails;
+  userDetails = JSON.parse(localStorage.getItem('UserDetails') || '{}');
   categories: Array<Category>;
   modalRef!: MdbModalRef<ModifyTransactionComponent>;
   startDate: string;
   endDate: string;
-
   notifierSubscription: Subscription = this.notifierService.subjectNotifier.subscribe(notified => {
     this.ngOnChanges();
   });
-
-  // transactionDTO: TransactionModel=new TransactionModel();
   name!: string;
   
   constructor(private dataStorageService: DataStorageService, public dialog: MatDialog, private notifierService: NotifierService) {  
     this.category = new Category(0, 0, "", "", "",0,0,0);
     this.type = "";
     this.categories=[];
-    this.userDetails= localStorage.UserDetails;
+    this.userDetails= JSON.parse(localStorage.getItem('UserDetails') || '{}');
     this.startDate = localStorage.startDate;
     this.endDate = localStorage.endDate;
     
   }
   ngOnInit(): void {
-    this.dataStorageService.getCategories(localStorage.UserDetails, this.type, this.startDate, this.endDate).subscribe(
+    this.userDetails= JSON.parse(localStorage.getItem('UserDetails') || '{}');
+    this.dataStorageService.getCategories(this.userDetails.id, this.type, this.startDate, this.endDate).subscribe(
       async (categories) => {
         this.categories = categories;
         this.startDate = localStorage.startDate;
@@ -59,15 +58,13 @@ export class CategoryPageComponent implements OnInit, OnDestroy, OnChanges {
         }
       }
       );
+      this.categories=this.categories.sort((a, b) => (a.sum<b.sum) ? 1 : -1);
 
   }
 
   async ngOnChanges(): Promise<void> {
-    await this.dataStorageService.getCategories(localStorage.UserDetails, this.type, this.startDate, this.endDate).subscribe(
+    await this.dataStorageService.getCategories(this.userDetails.id, this.type, this.startDate, this.endDate).subscribe(
       (categories) => {
-        console.log("this details id"+this.userDetails.id)
-        console.log("this ls id"+localStorage.UserDetails.id)
-        this.categories=categories;
         for(let category of categories){
           this.dataStorageService.getCategoryStats(category.id, localStorage.startDate, localStorage.endDate).subscribe(
             (stats) => {
@@ -76,23 +73,10 @@ export class CategoryPageComponent implements OnInit, OnDestroy, OnChanges {
                 category.avg = stats.avg;
             }
           );
-          this.categories=categories;
         }
-      }
+        this.categories=categories.sort((a, b) => (a.sum<b.sum) ? 1 : -1);
+      },
     );
-    
-    this.startDate = localStorage.startDate;
-    this.endDate = localStorage.endDate;
-     for(let category of this.categories){
-      await this.dataStorageService.getCategoryStats(this.category.id, localStorage.startDate, localStorage.endDate).subscribe(
-        (stats) => {
-            this.category.sum = stats.sum;
-            this.category.count = stats.count;
-            this.category.avg = stats.avg;
-        }
-
-      );
-    }
   }
 
   ngOnDestroy() {
@@ -102,7 +86,7 @@ export class CategoryPageComponent implements OnInit, OnDestroy, OnChanges {
   async openDialog(category: Category): Promise<void> {
      const dialogRef = this.dialog.open( ModifyTransactionComponent, {
       width: '250px',
-      data: {type: category.type, userId: 1, categoryId: category.id}
+      data: {type: category.type, userId: this.userDetails.id, categoryId: category.id}
     }
     );
     dialogRef.afterClosed().subscribe(result => {
@@ -110,6 +94,18 @@ export class CategoryPageComponent implements OnInit, OnDestroy, OnChanges {
     }
     );
   }
+
+  async openList(category: Category): Promise<void> {
+    const dialogRef = this.dialog.open( TransactionsListComponent, {
+     width: '80%',
+     data: {transactions: category.transactions, userId: this.userDetails.id, categoryId: category.id, category: category}
+   }
+   );
+   dialogRef.afterClosed().subscribe(result => {
+     this.ngOnChanges();
+   }
+   );
+ }
 
 
 
