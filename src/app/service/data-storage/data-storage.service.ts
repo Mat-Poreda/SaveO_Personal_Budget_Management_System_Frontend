@@ -13,6 +13,7 @@ export class DataStorageService {
 
   readonly baseURL:string = "http://localhost:8000/api";  
   readonly transactionURL:string = "http://localhost:8000/api/data_storage/transactions/";  
+  readonly reportURL:string = "http://localhost:8000/api/data_storage/report/";  
 
   constructor(
     private http: HttpClient
@@ -55,4 +56,12 @@ export class DataStorageService {
     deleteTransaction(transactionDTO: TransactionModel) {
       return this.http.delete<any>(this.transactionURL + transactionDTO.id);
     }
+
+
+    getUserBalance(userId: number, startDate: string, endDate: string) : Observable<any> {
+      let params = {startDate: startDate, endDate: endDate};
+      return this.http.get<any>(this.reportURL +userId+'/balance', {params: params});
+    }
+
+
 }
