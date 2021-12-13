@@ -9,8 +9,6 @@ import TransactionModel from 'src/app/models/transaction.model';
 })
 export class DataStorageService {
 
-
-
   readonly baseURL:string = "http://localhost:8000/api";  
   readonly transactionURL:string = "http://localhost:8000/api/data_storage/transactions/";  
   readonly reportURL:string = "http://localhost:8000/api/data_storage/report/";  
@@ -48,7 +46,6 @@ export class DataStorageService {
       let params = {startDate: startDate, endDate: endDate};
       return this.http.get<any>(this.baseURL + '/data_storage/category/'+categoryId+'/stats', {params: params});
     }
-
 
     postTransaction(userId: number, transactionDTO: TransactionModel) : Observable<any> {
       return this.http.post<any>(this.transactionURL + userId, transactionDTO);
