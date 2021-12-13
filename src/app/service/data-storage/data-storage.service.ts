@@ -57,10 +57,14 @@ export class DataStorageService {
       return this.http.delete<any>(this.transactionURL + transactionDTO.id);
     }
 
-
     getUserBalance(userId: number, startDate: string, endDate: string) : Observable<any> {
       let params = {startDate: startDate, endDate: endDate};
       return this.http.get<any>(this.reportURL +userId+'/balance', {params: params});
+    }
+
+    getCategoryStatsByType(userId: number, startDate: string, endDate: string, type: string) : Observable<any> {
+      let params = {startDate: startDate, endDate: endDate, type: type};
+      return this.http.get<any>(this.reportURL +userId+'/category_stats_by_type', {params: params});
     }
 
 

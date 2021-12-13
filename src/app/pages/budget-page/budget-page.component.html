@@ -9,14 +9,15 @@
             <ngx-charts-bar-vertical 
                 [view]="[1000,400]"
                 [results]="balance"
-                [xAxisLabel]="'Products'"
-                [legendTitle]="'Product Sale Chart'"
-                [yAxisLabel]="'Sale'"
+                [xAxisLabel]="'Types/Streams'"
+                [legendTitle]="'Balance chart'"
+                [yAxisLabel]="'Amount'"
                 [legend]="true"
                 [showXAxisLabel]="true"
                 [showYAxisLabel]="true"
                 [xAxis]="true"
                 [yAxis]="true"
+                [roundEdges]="false"
                 [gradient]="true">
             </ngx-charts-bar-vertical>
           </div>
@@ -27,7 +28,7 @@
           <div class="card-body">
             <h4 class="card-title border-bottom">Advanced Pie Charts</h4>
             <ngx-charts-advanced-pie-chart 
-                  [results]="saleData"
+                  [results]="balance"
                   [gradient]="true" >
             </ngx-charts-advanced-pie-chart>
           </div>
@@ -38,7 +39,7 @@
           <div class="card-body">
             <h4 class="card-title border-bottom">Pie Grid Charts</h4>
             <ngx-charts-pie-grid 
-              [results]="saleData" >
+              [results]="balance" >
             </ngx-charts-pie-grid>
           </div>
         </div>
@@ -48,7 +49,49 @@
           <div class="card-body">
             <h4 class="card-title border-bottom">Pie Charts</h4>
             <ngx-charts-pie-chart 
-                [results]="saleData"
+                [results]="balance"
+                [legend]="true"
+                [legendTitle]="'Product Sale Report'" 
+                [view]="[1000,300]"
+                [labels]="true" >
+            </ngx-charts-pie-chart>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="card text-left">
+          <div class="card-body">
+            <h4 class="card-title border-bottom">Pie Charts</h4>
+            <ngx-charts-pie-chart 
+                [results]="income"
+                [legend]="true"
+                [legendTitle]="'Product Sale Report'" 
+                [view]="[1000,300]"
+                [labels]="true" >
+            </ngx-charts-pie-chart>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="card text-left">
+          <div class="card-body">
+            <h4 class="card-title border-bottom">Pie Charts</h4>
+            <ngx-charts-pie-chart 
+                [results]="expense"
+                [legend]="true"
+                [legendTitle]="'Product Sale Report'" 
+                [view]="[1000,300]"
+                [labels]="true" >
+            </ngx-charts-pie-chart>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="card text-left">
+          <div class="card-body">
+            <h4 class="card-title border-bottom">Pie Charts</h4>
+            <ngx-charts-pie-chart 
+                [results]="deposit"
                 [legend]="true"
                 [legendTitle]="'Product Sale Report'" 
                 [view]="[1000,300]"
