@@ -1,3 +1,10 @@
 body{
     background-color: transparent;
 }
+.card{
+    background-color: transparent;
+    color: goldenrod;
+}
+.label{
+    color: white;
+}

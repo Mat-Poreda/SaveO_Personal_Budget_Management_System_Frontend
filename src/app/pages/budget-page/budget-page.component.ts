@@ -38,13 +38,13 @@ export class BudgetPageComponent implements OnInit {
 
     this.type = "";
     this.userDetails= JSON.parse(localStorage.getItem('UserDetails') || '{}');
-    this.startDate = localStorage.startDate;
-    this.endDate = localStorage.endDate;
+    this.startDate = new Date("1900-01-01");
+    this.endDate = new Date("2900-01-01");
   }
 
   ngOnInit(): void {
     this.userDetails= JSON.parse(localStorage.getItem('UserDetails') || '{}');
-      this.dataStorageService.getUserBalance(this.userDetails.id, this.startDate, this.endDate).subscribe(
+      this.dataStorageService.getUserBalance(this.userDetails.id, localStorage.startDate, localStorage.endDate).subscribe(
         (balance) => {
           this.balance = balance;
         }

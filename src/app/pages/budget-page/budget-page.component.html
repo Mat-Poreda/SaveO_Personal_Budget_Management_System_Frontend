@@ -1,11 +1,11 @@
 <body>
 <div style="display: inline-block">
 
-    <div class="row pt-3">
+    <div class="row pt-3" >
       <div class="col-md-12">
         <div class="card text-left">
-          <div class="card-body">
-            <h4 class="card-title border-bottom">Vertical Bar Charts</h4>
+          <div class="card-body" class="areachart-wrapper dark">
+            <h4 class="card-title border-bottom">Summary chart</h4>
             <ngx-charts-bar-vertical 
                 [view]="[1000,400]"
                 [results]="balance"
@@ -25,7 +25,7 @@
       </div>
       <div class="col-md-12">
         <div class="card text-left">
-          <div class="card-body" style="max-height: 60vh; max-width: 90%;">
+          <div class="card-body" style="max-height: 60vh; max-width: 90%;" class="areachart-wrapper dark">
             <h4 class="card-title border-bottom">Advanced Pie Charts</h4>
             <ngx-charts-advanced-pie-chart 
                   [results]="balance"
@@ -36,7 +36,7 @@
       </div>
       <div class="col-md-12">
         <div class="card text-left">
-          <div class="card-body" style="max-height: 60vh; max-width: 90%">
+          <div class="card-body" style="max-height: 60vh; max-width: 90%" class="areachart-wrapper dark"> 
             <h4 class="card-title border-bottom">Pie Grid Charts</h4>
             <ngx-charts-pie-grid 
               [results]="balance" >
@@ -46,7 +46,7 @@
       </div>
       <div class="col-md-12">
         <div class="card text-left">
-          <div class="card-body">
+          <div class="card-body" class="areachart-wrapper dark">
             <h4 class="card-title border-bottom">Pie Charts</h4>
             <ngx-charts-pie-chart 
                 [results]="balance"
@@ -60,12 +60,12 @@
       </div>
       <div class="col-md-12">
         <div class="card text-left">
-          <div class="card-body">
-            <h4 class="card-title border-bottom">Pie Charts</h4>
+          <div class="card-body" class="areachart-wrapper dark">
+            <h4 class="card-title border-bottom">Incomes</h4>
             <ngx-charts-pie-chart 
                 [results]="income"
                 [legend]="true"
-                [legendTitle]="'Product Sale Report'" 
+                [legendTitle]="'Sources of income'" 
                 [view]="[1000,300]"
                 [labels]="true" >
             </ngx-charts-pie-chart>
@@ -74,12 +74,12 @@
       </div>
       <div class="col-md-12">
         <div class="card text-left">
-          <div class="card-body">
-            <h4 class="card-title border-bottom">Pie Charts</h4>
+          <div class="card-body" class="areachart-wrapper dark">
+            <h4 class="card-title border-bottom">Expenses</h4>
             <ngx-charts-pie-chart 
                 [results]="expense"
                 [legend]="true"
-                [legendTitle]="'Product Sale Report'" 
+                [legendTitle]="'Spent funds'" 
                 [view]="[1000,300]"
                 [labels]="true" >
             </ngx-charts-pie-chart>
@@ -88,12 +88,12 @@
       </div>
       <div class="col-md-12">
         <div class="card text-left">
-          <div class="card-body">
-            <h4 class="card-title border-bottom">Pie Charts</h4>
+          <div class="card-body" class="areachart-wrapper dark">
+            <h4 class="card-title border-bottom">Deposits</h4>
             <ngx-charts-pie-chart 
                 [results]="deposit"
                 [legend]="true"
-                [legendTitle]="'Product Sale Report'" 
+                [legendTitle]="'Deposited funds'" 
                 [view]="[1000,300]"
                 [labels]="true" >
             </ngx-charts-pie-chart>

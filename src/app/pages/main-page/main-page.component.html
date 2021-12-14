@@ -6,7 +6,7 @@
         <div class="flex items-center cursor-pointer justify-center relative w-16 h-16 rounded-full border-2 border-brand-100">
             <label for="file">
                 <div>
-                    <img class="avatar mat-elevation-z8" [src]="img ? img : 'https://img2.freepng.fr/20190512/tft/kisspng-benjamin-franklin-united-states-one-hundred-dollar-5cd88123dbcc77.3907005415576927079003.jpg'" title="" alt="default image of groot">   
+                    <img class="avatar mat-elevation-z8" [src]="img ? img : 'https://img2.freepng.fr/20190512/tft/kisspng-benjamin-franklin-united-states-one-hundred-dollar-5cd88123dbcc77.3907005415576927079003.jpg'" title="" alt="default Benjamin">   
                 </div>
             </label>
             <input #imageInput id="file" type='file' accept="image/*" (change)="processFile(imageInput, userDetails.email)" class="select-profile-picture" style=" visibility: hidden;">

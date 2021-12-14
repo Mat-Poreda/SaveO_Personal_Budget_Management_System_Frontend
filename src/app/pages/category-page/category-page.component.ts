@@ -36,8 +36,8 @@ export class CategoryPageComponent implements OnInit, OnDestroy, OnChanges {
     this.type = "";
     this.categories=[];
     this.userDetails= JSON.parse(localStorage.getItem('UserDetails') || '{}');
-    this.startDate = localStorage.startDate;
-    this.endDate = localStorage.endDate;
+    this.startDate = "1900-01-01";
+    this.endDate = "2900-01-01";
     
   }
   ngOnInit(): void {

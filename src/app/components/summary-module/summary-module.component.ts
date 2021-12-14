@@ -23,9 +23,9 @@ export class SummaryModuleComponent implements OnInit {
   ];
 
   constructor(private notifierService: NotifierService) { 
-    this.selectedDates='today';
-    this.startDate = new Date().toISOString().slice(0, 10);
-    this.endDate = new Date().toISOString().slice(0, 10);
+    this.selectedDates='';
+    this.startDate = "1990-01-01";
+    this.endDate = "2900-01-01";
     localStorage.setItem('startDate', this.startDate);
     localStorage.setItem('endDate', this.endDate);
    }

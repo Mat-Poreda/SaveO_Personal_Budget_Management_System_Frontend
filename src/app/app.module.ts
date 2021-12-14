@@ -15,7 +15,6 @@ import { AuthNavComponent } from './components/auth-nav/auth-nav.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { LoadingComponent } from './components/loading/loading.component';
-import { ProfileComponent } from './pages/profile/profile.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthHttpInterceptor } from '@auth0/auth0-angular';
 import { HttpClientModule } from '@angular/common/http';
@@ -60,7 +59,6 @@ import { TransactionsListComponent } from './components/modals/transactions-list
     NavBarComponent,
     MainNavComponent,
     LoadingComponent,
-    ProfileComponent,
     HomeComponent,
     PageNotFoundComponent,
     FooterComponent,

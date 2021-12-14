@@ -16,7 +16,7 @@
                 <td><span style="white-space: nowrap; margin-left: 5px;">{{category.name}}</span></td>
                 <td><span style="white-space: nowrap; margin-left: 5px;">{{category.sum}}</span></td>
                 <td><span style="white-space: nowrap; margin-left: 5px;">{{category.count}}</span></td>
-                <td><span style="white-space: nowrap; margin-left: 5px;">{{category.avg}}</span></td>
+                <td><span style="white-space: nowrap; margin-left: 5px;">{{category.avg.toFixed(2)}}</span></td>
                 <td><button (click)="openList(category)"class="btn-gold"><i class="bi bi-card-list"></i> Details</button></td>
                 <td><button (click)="openDialog(category)"><i class="bi bi-plus-circle"></i> Add</button></td>
             </tr>
