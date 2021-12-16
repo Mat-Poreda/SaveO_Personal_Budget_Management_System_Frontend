@@ -3,7 +3,15 @@
     <button mat-button (click)="changeDate('yesterday')" [ngClass]="selectedDates == 'yesterday' ? 'glowing-gold': 'dateButton'">yesterday</button>
     <button mat-button (click)="changeDate('week')" [ngClass]="selectedDates == 'week' ? 'glowing-gold': 'dateButton'">week</button>
     <button mat-button (click)="changeDate('month')" [ngClass]="selectedDates == 'month' ? 'glowing-gold': 'dateButton'">month</button>
-    <button mat-button (click)="changeDate('custom')" [ngClass]="selectedDates == 'custom' ? 'glowing-gold': 'dateButton'">pick date</button>
+    <!-- <button mat-button (click)="changeDate('custom')" [ngClass]="selectedDates == 'custom' ? 'glowing-gold': 'dateButton'">pick date</button>
+    <mat-form-field appearance="fill" [ngClass]="selectedDates == 'custom' ? 'glowing-gold': 'dateButton'">
+        <mat-label>Start Date</mat-label>
+        <input type="date" matInput [(ngModel)]="startDate">
+      </mat-form-field >
+      <mat-form-field appearance="fill" [ngClass]="selectedDates == 'custom' ? 'glowing-gold': 'dateButton'">
+        <mat-label>End Date</mat-label>
+        <input type="date" matInput [(ngModel)]="endDate">
+      </mat-form-field> -->
 
 </div>
 <div class="summaryContainer" fxLayout="row" fxLayoutGap="30px" style="width: 90%;">

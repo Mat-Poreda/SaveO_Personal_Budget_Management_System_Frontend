@@ -9,10 +9,9 @@ import TransactionModel from 'src/app/models/transaction.model';
 })
 export class DataStorageService {
 
-
-
   readonly baseURL:string = "http://localhost:8000/api";  
   readonly transactionURL:string = "http://localhost:8000/api/data_storage/transactions/";  
+  readonly reportURL:string = "http://localhost:8000/api/data_storage/report/";  
 
   constructor(
     private http: HttpClient
@@ -48,11 +47,27 @@ export class DataStorageService {
       return this.http.get<any>(this.baseURL + '/data_storage/category/'+categoryId+'/stats', {params: params});
     }
 
-
     postTransaction(userId: number, transactionDTO: TransactionModel) : Observable<any> {
       return this.http.post<any>(this.transactionURL + userId, transactionDTO);
     }
     deleteTransaction(transactionDTO: TransactionModel) {
       return this.http.delete<any>(this.transactionURL + transactionDTO.id);
     }
+
+    getUserBalance(userId: number, startDate: string, endDate: string) : Observable<any> {
+      let params = {startDate: startDate, endDate: endDate};
+      return this.http.get<any>(this.reportURL +userId+'/balance', {params: params});
+    }
+
+    getUserTypes(userId: number, startDate: string, endDate: string) : Observable<any> {
+      let params = {startDate: startDate, endDate: endDate};
+      return this.http.get<any>(this.reportURL +userId+'/type_stats', {params: params});
+    }
+
+    getCategoryStatsByType(userId: number, startDate: string, endDate: string, type: string) : Observable<any> {
+      let params = {startDate: startDate, endDate: endDate, type: type};
+      return this.http.get<any>(this.reportURL +userId+'/category_stats_by_type', {params: params});
+    }
+
+
 }

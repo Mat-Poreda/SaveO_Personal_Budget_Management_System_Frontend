@@ -15,7 +15,6 @@ import { AuthNavComponent } from './components/auth-nav/auth-nav.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { LoadingComponent } from './components/loading/loading.component';
-import { ProfileComponent } from './pages/profile/profile.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthHttpInterceptor } from '@auth0/auth0-angular';
 import { HttpClientModule } from '@angular/common/http';
@@ -48,7 +47,8 @@ import { MatDialogClose, MatDialogModule } from '@angular/material/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SummaryModuleComponent } from './components/summary-module/summary-module.component';
 import { TransactionsListComponent } from './components/modals/transactions-list/transactions-list.component';
-// import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +60,6 @@ import { TransactionsListComponent } from './components/modals/transactions-list
     NavBarComponent,
     MainNavComponent,
     LoadingComponent,
-    ProfileComponent,
     HomeComponent,
     PageNotFoundComponent,
     FooterComponent,
@@ -106,9 +105,8 @@ import { TransactionsListComponent } from './components/modals/transactions-list
     MatSelectModule,
     MatDialogModule,
     FlexLayoutModule,
-    // MdbModalService,
-    // MdbModalRef,
-
+    MatDatepickerModule,
+    MatNativeDateModule
     
   ],
   exports: [
