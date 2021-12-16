@@ -70,7 +70,8 @@ export class BudgetPageComponent implements OnInit {
       );
       this.dataStorageService.getUserBalance(this.userDetails.id, localStorage.startDate, localStorage.endDate).subscribe(
         (pieChartData) => {
-          pieChartData.splice(3, 1);
+
+          pieChartData.splice(0, 1);
           this.pieChartData = pieChartData;
         }
       );
@@ -103,6 +104,13 @@ export class BudgetPageComponent implements OnInit {
     this.dataStorageService.getUserTypes(this.userDetails.id, localStorage.startDate, localStorage.endDate).subscribe(
       (pieChartData) => {
         this.pieChartData = pieChartData.find( ({ name }) => name != 'INCOME' );
+      }
+    );
+    this.dataStorageService.getUserBalance(this.userDetails.id, localStorage.startDate, localStorage.endDate).subscribe(
+      (pieChartData) => {
+
+        pieChartData.splice(0, 1);
+        this.pieChartData = pieChartData;
       }
     );
     this.updateChart();

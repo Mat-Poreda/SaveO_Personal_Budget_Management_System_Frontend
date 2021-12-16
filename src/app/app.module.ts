@@ -47,7 +47,8 @@ import { MatDialogClose, MatDialogModule } from '@angular/material/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SummaryModuleComponent } from './components/summary-module/summary-module.component';
 import { TransactionsListComponent } from './components/modals/transactions-list/transactions-list.component';
-// import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -104,9 +105,8 @@ import { TransactionsListComponent } from './components/modals/transactions-list
     MatSelectModule,
     MatDialogModule,
     FlexLayoutModule,
-    // MdbModalService,
-    // MdbModalRef,
-
+    MatDatepickerModule,
+    MatNativeDateModule
     
   ],
   exports: [
