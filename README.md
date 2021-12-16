@@ -1,4 +1,3 @@
-<img alt="project logo" src="https://github.com/EN-IH-WDPT-JUN21/tEapot-Cinebase-movies-app-backend/blob/main/logo-20.png" style = "max-width: 80px;">
 
 <br />
 <p align="center">
@@ -18,7 +17,7 @@
   ===========================
   
   Watch our promotional video:
-  [![Promo video](src/main/resources/images/VID_IMG.jpg)](https://biteable.com/watch/3222992/5eb39a67866be17856d0c8bda41fb1da)
+  [![Promo video](src/assets/img/promo_vid.png)](https://app.animaker.com/video/G9ZJHDG652J17TK8)
   
   Project Architecture
   ===========================
