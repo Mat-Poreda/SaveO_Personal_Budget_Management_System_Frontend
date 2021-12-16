@@ -1,27 +1,91 @@
-# SaveOFrontend
+<img alt="project logo" src="https://github.com/EN-IH-WDPT-JUN21/tEapot-Cinebase-movies-app-backend/blob/main/logo-20.png" style = "max-width: 80px;">
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
+<br />
+<p align="center">
 
-## Development server
+  <h3 align="center">SaveO</h3>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+  <p align="center">
+    Personal budget management system created by:
+    <br />
+    ·
+    <a href="https://github.com/Mat-Poreda"><strong>Mateusz Poreda</strong></a>
+    ·
+  </p>
+  
+  
+  Project Requirements
+  ===========================
+  
+  The project will have at least these sections:
+  - A section to search movies (the search should be case insensitive)
+  - A movie detail
+  - Login/Register section (only registered users can create playlists)
+  - User profile page (if logged)
+  - User playlist section (if logged)
+  
+  Project Architecture
+  ===========================
+  
+  The project architecture is still evolving. Presented use case is just a first step in development
+  
+  <img alt="use case" src="https://github.com/EN-IH-WDPT-JUN21/tEapot-Cinebase-movies-app-backend/blob/main/structure-Page-2.png">
+  
+  Database MySQL Set-up
+  ===========================
+  
+  create database SaveO;
 
-## Code scaffolding
+  use SaveO;
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  CREATE USER 'SaveO'@'localhost' IDENTIFIED BY 'SaveORandomPassw@ord';
 
-## Build
+  GRANT ALL PRIVILEGES ON \*.\* TO 'SaveO'@'localhost';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+  FLUSH PRIVILEGES;
+  
+  Back End
+  ===========================
+  
+  The back end part can be found in the following repo: https://github.com/Mat-Poreda/SaveO_Personal_Budget_Management_System_Backend
+  
+  
+  Look and Feel
+  ===========================
+  
+  Bespoke UI elements:
+  
+  <img alt="project logo" src="https://github.com/EN-IH-WDPT-JUN21/tEapot-Cinebase-movies-app-backend/blob/main/iterface.png">
+  
+  Additional features
+  ===========================
+  
+  Saveo uses Auth0 authorisation and authentication service.
+  
+  You can select your profile picture by clicking on the default image.
+  
+  Contributing
+  ===========================
+  
+  Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are 
+  **greatly appreciated**.
 
-## Running unit tests
+  1. Fork the Project
+  2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+  3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+  4. Push to the Branch (`git push origin feature/AmazingFeature`)
+  5. Open a Pull Request
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+  License
+  ===========================
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+  Distributed under the MIT License. See `LICENSE` for more information
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+  Thank you!
+  ===========================
+  
+  P.S. Try a route that doesn't exist, its fun to explore...
+  
+
