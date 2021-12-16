@@ -14,15 +14,11 @@
   </p>
   
   
-  Project Requirements
+  Promotional Video
   ===========================
   
-  The project will have at least these sections:
-  - A section to search movies (the search should be case insensitive)
-  - A movie detail
-  - Login/Register section (only registered users can create playlists)
-  - User profile page (if logged)
-  - User playlist section (if logged)
+  Watch our promotional video:
+  [![Promo video](src/main/resources/images/VID_IMG.jpg)](https://biteable.com/watch/3222992/5eb39a67866be17856d0c8bda41fb1da)
   
   Project Architecture
   ===========================
