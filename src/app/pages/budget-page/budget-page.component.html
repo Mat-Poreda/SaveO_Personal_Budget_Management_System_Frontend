@@ -28,7 +28,7 @@
           <div class="card-body" style="max-height: 60vh; max-width: 90%;" class="areachart-wrapper dark">
             <h4 class="card-title border-bottom">Advanced Pie Charts</h4>
             <ngx-charts-advanced-pie-chart 
-                  [results]="balance"
+                  [results]="pieChartData"
                   [gradient]="true" >
             </ngx-charts-advanced-pie-chart>
           </div>
@@ -39,7 +39,7 @@
           <div class="card-body" style="max-height: 60vh; max-width: 90%" class="areachart-wrapper dark"> 
             <h4 class="card-title border-bottom">Pie Grid Charts</h4>
             <ngx-charts-pie-grid 
-              [results]="balance" >
+              [results]="pieChartData" >
             </ngx-charts-pie-grid>
           </div>
         </div>
@@ -47,9 +47,9 @@
       <div class="col-md-12">
         <div class="card text-left">
           <div class="card-body" class="areachart-wrapper dark">
-            <h4 class="card-title border-bottom">Pie Charts</h4>
+            <h4 class="card-title border-bottom">Balance chart</h4>
             <ngx-charts-pie-chart 
-                [results]="balance"
+                [results]="pieChartData"
                 [legend]="true"
                 [legendTitle]="'Product Sale Report'" 
                 [view]="[1000,300]"

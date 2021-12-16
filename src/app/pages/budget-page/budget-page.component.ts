@@ -19,6 +19,9 @@ export class BudgetPageComponent implements OnInit {
   balance= [
     {name:"" , value:0},
   ];
+  pieChartData= [
+    {name:"" , value:0},
+  ];
   income= [
     {name:"" , value:0},
   ];
@@ -52,23 +55,25 @@ export class BudgetPageComponent implements OnInit {
 
       this.dataStorageService.getCategoryStatsByType(this.userDetails.id, localStorage.startDate, localStorage.endDate, 'INCOME').subscribe(
         (income) => {
-          console.log(income);
           this.income = income;
         }
       );
       this.dataStorageService.getCategoryStatsByType(this.userDetails.id, localStorage.startDate, localStorage.endDate, 'EXPENSE').subscribe(
         (expense) => {
-          console.log(expense);
           this.expense = expense;
         }
       );
       this.dataStorageService.getCategoryStatsByType(this.userDetails.id, localStorage.startDate, localStorage.endDate, "DEPOSIT").subscribe(
         (deposit) => {
-          console.log(deposit);
           this.deposit = deposit;
         }
       );
-
+      this.dataStorageService.getUserBalance(this.userDetails.id, localStorage.startDate, localStorage.endDate).subscribe(
+        (pieChartData) => {
+          pieChartData.splice(3, 1);
+          this.pieChartData = pieChartData;
+        }
+      );
   }
 
 
@@ -93,6 +98,11 @@ export class BudgetPageComponent implements OnInit {
       (deposit) => {
         console.log(deposit);
         this.deposit = deposit;
+      }
+    );
+    this.dataStorageService.getUserTypes(this.userDetails.id, localStorage.startDate, localStorage.endDate).subscribe(
+      (pieChartData) => {
+        this.pieChartData = pieChartData.find( ({ name }) => name != 'INCOME' );
       }
     );
     this.updateChart();
