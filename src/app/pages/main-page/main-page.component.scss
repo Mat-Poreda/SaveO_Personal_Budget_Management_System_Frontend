@@ -1,0 +1,184 @@
+@import '~mdb-ui-kit/css/mdb.min.css';
+
+
+@import '~bootstrap/dist/css/bootstrap.min.css'; 
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+mat-toolbar {
+    background: gray;
+    color: white;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+mat-sidenav {
+    margin: 3%px;
+    width: 200px;
+    background-color: #18191f;
+    opacity: 0.9;
+    background-blend-mode: color;
+    color: goldenrod;
+    border-radius: 10px;
+    border-color: goldenrod;
+    border: 2px;
+
+    text-align: center;
+    overflow: hidden;
+
+}
+
+.content {
+    height: calc(100vh - 98px);
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+
+    display: flex;
+    justify-content: start;
+  
+
+    font-size: 2rem;
+    color: lightgray;
+
+    
+}
+
+mat-sidenav-container {
+    height: calc(100vh - 65px);
+    margin-left: 1%;
+
+    // opacity: 0.80;
+}
+
+.menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+    mat-icon {
+        margin-right: 8px;
+    }
+
+}
+
+
+.avatar {
+    margin-top: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.name {
+    margin-top: 8px;
+    font-weight: normal;
+}
+
+.designation {
+    margin-top: 2px;
+    font-size: 0.7rem;
+    color: lightgrey;
+}
+
+mat-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+
+  .select-profile-picture {
+    margin: 1%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    width: 50%;
+    height: 50%;
+    cursor: pointer;
+  
+  }
+
+  .message {
+    font-family: 'Roboto';
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    transition: all 1s;
+    opacity: 0;
+    background: rgba(229, 229, 229, 0.83);
+  }
+  
+  .image-container:hover .message {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    background: rgba(229, 229, 229, 0.83);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    height: 100vh;
+    width: 100vw;
+    background: #18191f;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
+
+
+
+  #apple,
+  #twitter,
+  #github,
+  #facebook {
+    font-size: 5em;
+    background-color: #18191f;
+    color: #fff;
+    box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080,
+      2px 2px 10px #00000080, 2px 2px 3px #00000080, inset 2px 2px 10px #00000080,
+      inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080,
+      inset 2px 2px 10px #00000080;
+    border-radius: 29px;
+    padding: 11px 19px;
+    // margin: 0 40px;
+    animation: animate 3s linear infinite;
+    text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+      0 0 200px #0072ff;
+  }
+  #twitter {
+    animation-delay: 0.3s;
+  }
+  #facebook {
+    animation-delay: 0.7s;
+  }
+  #github {
+    animation-delay: 0.1s;
+  }
+  
+  @keyframes animate {
+    from {
+      filter: hue-rotate(0deg);
+    }
+    to {
+      filter: hue-rotate(360deg);
+    }
+  }
+  .routerLinkActive{
+    color: goldenrod
+  }

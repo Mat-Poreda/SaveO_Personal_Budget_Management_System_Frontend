@@ -1,0 +1,106 @@
+<body>
+<div style="display: inline-block">
+
+    <div class="row pt-3" >
+      <div class="col-md-12">
+        <div class="card text-left">
+          <div class="card-body" class="areachart-wrapper dark">
+            <h4 class="card-title border-bottom">Summary chart</h4>
+            <ngx-charts-bar-vertical 
+                [view]="[1000,400]"
+                [results]="balance"
+                [xAxisLabel]="'Types/Streams'"
+                [legendTitle]="'Balance chart'"
+                [yAxisLabel]="'Amount'"
+                [legend]="true"
+                [showXAxisLabel]="true"
+                [showYAxisLabel]="true"
+                [xAxis]="true"
+                [yAxis]="true"
+                [roundEdges]="false"
+                [gradient]="true">
+            </ngx-charts-bar-vertical>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="card text-left">
+          <div class="card-body" style="max-height: 60vh; max-width: 90%;" class="areachart-wrapper dark">
+            <h4 class="card-title border-bottom">Advanced Pie Charts</h4>
+            <ngx-charts-advanced-pie-chart 
+                  [results]="pieChartData"
+                  [gradient]="true" >
+            </ngx-charts-advanced-pie-chart>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="card text-left">
+          <div class="card-body" style="max-height: 60vh; max-width: 90%" class="areachart-wrapper dark"> 
+            <h4 class="card-title border-bottom">Pie Grid Charts</h4>
+            <ngx-charts-pie-grid 
+              [results]="pieChartData" >
+            </ngx-charts-pie-grid>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="card text-left">
+          <div class="card-body" class="areachart-wrapper dark">
+            <h4 class="card-title border-bottom">Balance chart</h4>
+            <ngx-charts-pie-chart 
+                [results]="pieChartData"
+                [legend]="true"
+                [legendTitle]="'Categories'" 
+                [view]="[1000,300]"
+                [labels]="true" >
+            </ngx-charts-pie-chart>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="card text-left">
+          <div class="card-body" class="areachart-wrapper dark">
+            <h4 class="card-title border-bottom">Incomes</h4>
+            <ngx-charts-pie-chart 
+                [results]="income"
+                [legend]="true"
+                [legendTitle]="'Sources of income'" 
+                [view]="[1000,300]"
+                [labels]="true" >
+            </ngx-charts-pie-chart>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="card text-left">
+          <div class="card-body" class="areachart-wrapper dark">
+            <h4 class="card-title border-bottom">Expenses</h4>
+            <ngx-charts-pie-chart 
+                [results]="expense"
+                [legend]="true"
+                [legendTitle]="'Spent funds'" 
+                [view]="[1000,300]"
+                [labels]="true" >
+            </ngx-charts-pie-chart>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="card text-left">
+          <div class="card-body" class="areachart-wrapper dark">
+            <h4 class="card-title border-bottom">Deposits</h4>
+            <ngx-charts-pie-chart 
+                [results]="deposit"
+                [legend]="true"
+                [legendTitle]="'Deposited funds'" 
+                [view]="[1000,300]"
+                [labels]="true" >
+            </ngx-charts-pie-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+</body>

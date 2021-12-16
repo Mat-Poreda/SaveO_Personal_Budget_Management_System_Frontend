@@ -1,0 +1,26 @@
+<div style="margin: 0;">
+    <table class="container" style="width: 100%;">
+        <thead>
+            <tr>
+                <th><h1><span style="white-space: nowrap; margin-left: 5px;">Category</span></h1></th>
+                <th><h1><span style="white-space: nowrap; margin-left: 5px;">Sum</span></h1></th>
+                <th><h1><span style="white-space: nowrap; margin-left: 5px;">Count</span></h1></th>
+                <th><h1><span style="white-space: nowrap; margin-left: 5px;">Avg</span></h1></th>
+                <th><h1><span style="white-space: nowrap; margin-left: 5px;"></span></h1></th>
+                <th><h1><span style="white-space: nowrap; margin-left: 5px;"></span></h1></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let category of categories; let i = index">
+                <td><span style="white-space: nowrap; margin-left: 5px;">{{category.name}}</span></td>
+                <td><span style="white-space: nowrap; margin-left: 5px;">{{category.sum}}</span></td>
+                <td><span style="white-space: nowrap; margin-left: 5px;">{{category.count}}</span></td>
+                <td><span style="white-space: nowrap; margin-left: 5px;">{{category.avg.toFixed(2)}}</span></td>
+                <td><button (click)="openList(category)"class="btn-gold"><i class="bi bi-card-list"></i> Details</button></td>
+                <td><button (click)="openDialog(category)"><i class="bi bi-plus-circle"></i> Add</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
