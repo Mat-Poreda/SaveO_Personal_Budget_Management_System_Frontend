@@ -17,6 +17,7 @@
   ===========================
   
   Watch our promotional video:
+  
   [![Promo video](src/assets/img/promo_vid.png)](https://app.animaker.com/video/G9ZJHDG652J17TK8)
   
   Project Architecture
