@@ -24,11 +24,11 @@
   
   The project architecture is still evolving. Presented use case is just a first step in development
   
-  <img alt="use case" src="https://github.com/EN-IH-WDPT-JUN21/tEapot-Cinebase-movies-app-backend/blob/main/structure-Page-2.png">
+  <img alt="use case" src="src/assets/img/SaveO_UseCase.svg">
   
   Database MySQL Set-up
   ===========================
-  
+  ```
   create database SaveO;
 
   use SaveO;
@@ -38,7 +38,7 @@
   GRANT ALL PRIVILEGES ON \*.\* TO 'SaveO'@'localhost';
 
   FLUSH PRIVILEGES;
-  
+  ```
   Back End
   ===========================
   
@@ -48,9 +48,9 @@
   Look and Feel
   ===========================
   
-  Bespoke UI elements:
+  UI overview:
   
-  <img alt="project logo" src="https://github.com/EN-IH-WDPT-JUN21/tEapot-Cinebase-movies-app-backend/blob/main/iterface.png">
+  <img alt="slideshow" src="src/assets/img/slides.gif">
   
   Additional features
   ===========================
